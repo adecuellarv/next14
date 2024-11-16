@@ -10,7 +10,7 @@ interface ProductPageProps {
 }
 
 export async function generateMetadata({ searchParams }: ProductPageProps) { 
-  const id = searchParams.id
+  const id = searchParams?.id
   const products = await getProducts(id)
   const product = products[0]
 
@@ -25,7 +25,7 @@ export async function generateMetadata({ searchParams }: ProductPageProps) {
 }
 
 export default async function ProductPage({ searchParams }: ProductPageProps) {
-  const id = searchParams.id
+  const id = searchParams?.id
   const products = await getProducts(id)
   const product = products[0]
 
